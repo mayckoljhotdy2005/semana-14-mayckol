@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruMax Perú - Actualizar cotización</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/actualizar.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="../java/actualizar.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO Y MENÚ
+    ====================================================== -->
+    <header>
+
+        <a href="../index.html" class="logo">
+            <div class="logo-icono">C</div>
+            <div>
+                <h1>Constru<em>Max</em> Perú</h1>
+                <p>Materiales y herramientas para tus proyectos</p>
+            </div>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-boton">☰</label>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cotizacion.html">Cotización</a></li>
+                <li><a href="consulta.html" class="activo">Mis cotizaciones</a></li>
+                <li><a href="pago.html">Pago</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         TÍTULO (HERO)
+    ====================================================== -->
+    <section class="titulo">
+
+        <div class="forma forma-1"></div>
+        <div class="forma forma-2"></div>
+
+        <div class="titulo-texto">
+            <span class="etiqueta">ACTUALIZAR COTIZACIÓN</span>
+            <h2>Actualiza tus <em>datos</em></h2>
+            <p>Modifica la información de tu cotización registrada.</p>
+        </div>
+
+        <div class="titulo-adorno">
+            <span>✏️</span>
+            <span>📋</span>
+            <span>🧱</span>
+            <span>🔒</span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main class="contenedor-actualizar">
+
+        <!-- ================= FORMULARIO ================= -->
+        <section class="formulario">
+
+            <h3>Datos de la cotización</h3>
+            <p class="descripcion-formulario">
+                Solo puedes modificar una cotización que se encuentre en estado registrado.
+            </p>
+
+            <!-- Progreso de campos completos -->
+            <div class="progreso-form" aria-hidden="true">
+                <div class="progreso-barra" id="progreso-barra"></div>
+                <span id="progreso-texto">0% completado</span>
+            </div>
+
+            <!-- Datos fijos -->
+            <div class="fila">
+
+                <div class="campo bloqueado" style="--i:0">
+                    <label for="codigo">Código de seguimiento</label>
+                    <div class="caja">
+                        <span class="icono">🔖</span>
+                        <input type="text" id="codigo" readonly>
+                    </div>
+                </div>
+
+                <div class="campo bloqueado" style="--i:1">
+                    <label for="estado">Estado</label>
+                    <div class="caja">
+                        <span class="icono">🏷️</span>
+                        <input type="text" id="estado" readonly>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="separador"><span>Datos del cliente</span></div>
+
+            <div class="fila">
+
+                <div class="campo" style="--i:2">
+                    <label for="nombre">Nombre completo</label>
+                    <div class="caja">
+                        <span class="icono">👤</span>
+                        <input type="text" id="nombre" required>
+                    </div>
+                </div>
+
+                <div class="campo" style="--i:3">
+                    <label for="telefono">Teléfono</label>
+                    <div class="caja">
+                        <span class="icono">📞</span>
+                        <input type="tel" id="telefono" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="campo" style="--i:4">
+                <label for="correo">Correo electrónico</label>
+                <div class="caja">
+                    <span class="icono">✉️</span>
+                    <input type="email" id="correo" required>
+                </div>
+            </div>
+
+            <div class="campo" style="--i:5">
+                <label for="direccion">Dirección</label>
+                <div class="caja">
+                    <span class="icono">📍</span>
+                    <input type="text" id="direccion">
+                </div>
+            </div>
+
+            <div class="separador"><span>Datos del pedido</span></div>
+
+            <div class="fila">
+
+                <div class="campo" style="--i:6">
+                    <label for="cantidad-estimada">Cantidad estimada</label>
+                    <div class="caja">
+                        <span class="icono">📦</span>
+                        <input type="text" id="cantidad-estimada" maxlength="50" required>
+                    </div>
+                </div>
+
+                <div class="campo" style="--i:7">
+                    <label for="entrega">Tipo de entrega</label>
+                    <div class="caja">
+                        <span class="icono">🚚</span>
+                        <select id="entrega" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="tienda">Recojo en tienda</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="campo" style="--i:8">
+                <label for="observaciones">Observaciones</label>
+                <div class="caja caja-texto">
+                    <span class="icono">💬</span>
+                    <textarea id="observaciones" rows="5"
+                        placeholder="Escribe alguna consulta o detalle adicional..."></textarea>
+                </div>
+            </div>
+
+            <!-- Mensaje -->
+            <p id="mensaje-actualizar" class="mensaje" role="status" aria-live="polite"></p>
+
+            <!-- Botones -->
+            <div class="botones">
+                <button type="button" id="btn-guardar" class="btn-principal">Guardar cambios</button>
+                <a href="consulta.html" class="btn-secundario">Cancelar</a>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PANEL LATERAL ================= -->
+        <aside class="resumen">
+
+            <div class="aro aro-1"></div>
+            <div class="aro aro-2"></div>
+
+            <div class="resumen-superior">
+                <span class="pequeno-titulo">CONSTRU MAX</span>
+                <div class="resumen-icono">🛡️</div>
+            </div>
+
+            <h3>Información importante</h3>
+
+            <div class="beneficio">
+                <strong>✓ Solo tus cotizaciones</strong>
+                <p>La actualización está vinculada a tu cuenta.</p>
+            </div>
+
+            <div class="beneficio">
+                <strong>✓ Estado registrado</strong>
+                <p>Solo puedes modificar cotizaciones que todavía estén en estado registrado.</p>
+            </div>
+
+            <div class="beneficio">
+                <strong>✓ Datos protegidos</strong>
+                <p>La cotización solo puede ser modificada por el usuario propietario.</p>
+            </div>
+
+            <div class="contacto">
+                <h4>¿Necesitas ayuda?</h4>
+                <p><strong>999 999 999</strong></p>
+                <p>ventas@construmax.pe</p>
+                <p>Huancayo, Junín</p>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-contenido">
+            <div>
+                <h3>ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+            <div class="footer-derecha">
+                <p>© 2026 ConstruMax Perú</p>
+                <p>Proyecto académico</p>
+            </div>
+        </div>
+
+        <div class="autor">Desarrollado por Mayckol Jhordy Huaman Lizarraga</div>
+
+    </footer>
+
+
+    <!-- Barra de progreso (efecto visual, no toca tu lógica) -->
+    <script>
+        (() => {
+            const ids = ["nombre", "telefono", "correo", "direccion", "cantidad-estimada", "entrega", "observaciones"];
+            const barra = document.getElementById("progreso-barra");
+            const texto = document.getElementById("progreso-texto");
+            const requeridos = ids.filter(i => document.getElementById(i).required || i === "direccion");
+            let ultimo = -1;
+            const actualizar = () => {
+                const listos = requeridos.filter(i => document.getElementById(i).value.trim() !== "").length;
+                const pct = Math.round(listos / requeridos.length * 100);
+                if (pct === ultimo) return;
+                ultimo = pct;
+                barra.style.width = pct + "%";
+                texto.textContent = pct + "% completado";
+            };
+            ids.forEach(i => document.getElementById(i).addEventListener("input", actualizar));
+            setInterval(actualizar, 500); // detecta valores cargados por actualizar.js
+        })();
+    </script>
+
+</body>
+
+</html>

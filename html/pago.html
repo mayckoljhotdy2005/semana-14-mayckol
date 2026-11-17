@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - ConstruMax Perú</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/pago.css">
+
+    <!-- JavaScript -->
+    <script src="../java/pago.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO Y MENÚ
+    ====================================================== -->
+    <header>
+
+        <a href="../index.html" class="logo">
+            <div class="logo-icono">C</div>
+            <div>
+                <h1>Constru<em>Max</em> Perú</h1>
+                <p>Materiales y herramientas para tus proyectos</p>
+            </div>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-boton">☰</label>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cotizacion.html">Cotización</a></li>
+                <li><a href="consulta.html">Mis cotizaciones</a></li>
+                <li><a href="pago.html" class="activo">Pago</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html" class="menu-login">Ingresar</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         TÍTULO (HERO)
+    ====================================================== -->
+    <section class="titulo">
+
+        <div class="forma forma-1"></div>
+        <div class="forma forma-2"></div>
+
+        <div class="titulo-texto">
+            <span class="etiqueta">PAGO SEGURO</span>
+            <h2>Realiza tu <em>pago</em></h2>
+            <p>Completa tus datos, elige tu método de pago y confirma tu pedido en pocos pasos.</p>
+        </div>
+
+        <div class="titulo-adorno">
+            <span>💳</span>
+            <span>🧱</span>
+            <span>🔒</span>
+            <span>🚚</span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PASOS DEL PROCESO
+    ====================================================== -->
+    <div class="pasos-proceso">
+
+        <a href="catalogo.html" class="pp hecho"><span>✓</span><b>Catálogo</b></a>
+        <div class="pp-linea llena"></div>
+
+        <a href="cotizacion.html" class="pp hecho"><span>✓</span><b>Cotización</b></a>
+        <div class="pp-linea"></div>
+
+        <div class="pp actual"><span>3</span><b>Pago</b></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
+    <main class="contenedor-pago">
+
+
+        <!-- ================= FORMULARIO ================= -->
+        <section class="formulario">
+
+            <h3>Datos del pago</h3>
+            <p class="descripcion-formulario">
+                Ingresa la información solicitada para completar tu compra.
+            </p>
+
+            <!-- Barra de progreso del formulario -->
+            <div class="progreso-form" aria-hidden="true">
+                <div class="progreso-barra" id="progreso-barra"></div>
+                <span id="progreso-texto">0% completado</span>
+            </div>
+
+            <form id="formulario-pago" novalidate>
+
+                <div class="fila">
+
+                    <!-- NOMBRE -->
+                    <div class="campo" style="--i:0">
+                        <label for="nombre">Nombre completo</label>
+                        <div class="caja">
+                            <span class="icono">👤</span>
+                            <input type="text" id="nombre" name="nombre"
+                                   placeholder="Ingresa tu nombre completo"
+                                   autocomplete="name" required>
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <!-- TELÉFONO -->
+                    <div class="campo" style="--i:1">
+                        <label for="telefono">Teléfono</label>
+                        <div class="caja">
+                            <span class="icono">📞</span>
+                            <input type="tel" id="telefono" name="telefono"
+                                   placeholder="999 999 999" maxlength="11"
+                                   autocomplete="tel" inputmode="numeric" required>
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                </div>
+
+                <!-- CORREO -->
+                <div class="campo" style="--i:2">
+                    <label for="correo">Correo electrónico</label>
+                    <div class="caja">
+                        <span class="icono">✉️</span>
+                        <input type="email" id="correo" name="correo"
+                               placeholder="ejemplo@gmail.com"
+                               autocomplete="email" required>
+                    </div>
+                    <small class="error-msg"></small>
+                </div>
+
+
+                <!-- MÉTODO DE PAGO -->
+                <div class="campo" style="--i:3">
+                    <label id="label-metodo">Método de pago</label>
+
+                    <input type="hidden" id="metodo" name="metodo" value="">
+
+                    <div class="metodos" role="radiogroup" aria-labelledby="label-metodo">
+
+                        <button type="button" class="metodo" data-metodo="yape" role="radio" aria-checked="false">
+                            <span class="metodo-icono">📱</span>
+                            <strong>Yape</strong>
+                            <small>Al instante</small>
+                        </button>
+
+                        <button type="button" class="metodo" data-metodo="plin" role="radio" aria-checked="false">
+                            <span class="metodo-icono">💸</span>
+                            <strong>Plin</strong>
+                            <small>Al instante</small>
+                        </button>
+
+                        <button type="button" class="metodo" data-metodo="transferencia" role="radio" aria-checked="false">
+                            <span class="metodo-icono">🏦</span>
+                            <strong>Transferencia</strong>
+                            <small>Bancaria</small>
+                        </button>
+
+                    </div>
+                    <small class="error-msg"></small>
+                </div>
+
+
+                <!-- INSTRUCCIONES SEGÚN MÉTODO -->
+                <div class="instrucciones" id="instrucciones" hidden>
+                    <div class="instr-icono" id="instr-icono">📱</div>
+                    <div class="instr-texto">
+                        <h4 id="instr-titulo">Paga con Yape</h4>
+                        <p id="instr-detalle">Realiza el pago y luego escribe aquí el número de operación.</p>
+                        <p class="instr-dato">
+                            <span id="instr-dato-label">Número</span>:
+                            <strong id="instr-dato">999 999 999</strong>
+                            <button type="button" class="copiar" id="btn-copiar" title="Copiar">📋 Copiar</button>
+                        </p>
+                        <p class="instr-dato">Titular: <strong>ConstruMax Perú</strong></p>
+                    </div>
+                </div>
+
+
+                <!-- NÚMERO DE OPERACIÓN -->
+                <div class="campo" style="--i:4">
+                    <label for="referencia">Número de operación</label>
+                    <div class="caja">
+                        <span class="icono">🧾</span>
+                        <input type="text" id="referencia" name="referencia"
+                               placeholder="Ejemplo: 123456789"
+                               maxlength="50" required>
+                    </div>
+                    <small class="error-msg"></small>
+                </div>
+
+
+                <!-- BOTONES -->
+                <div class="botones">
+                    <button type="submit" class="btn-principal btn-pago">Confirmar pago</button>
+                    <a href="cotizacion.html" class="limpiar">Volver</a>
+                </div>
+
+                <p class="seguro">🔒 Tus datos están protegidos y solo se usan para procesar tu pedido.</p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= RESUMEN ================= -->
+        <aside class="resumen">
+
+            <div class="aro aro-1"></div>
+            <div class="aro aro-2"></div>
+
+            <div class="resumen-superior">
+                <span class="pequeno-titulo">CONSTRUMAX</span>
+                <div class="resumen-icono">🧾</div>
+            </div>
+
+            <h3>Resumen de tu pago</h3>
+
+            <p class="resumen-desc">
+                Revisa los productos y cantidades antes de confirmar tu pago.
+            </p>
+
+            <!-- Productos del carrito (los carga pago.js) -->
+            <div id="productos-pago" class="productos-pago"></div>
+
+            <div class="resumen-item">
+                <span>Subtotal</span>
+                <strong id="subtotal-pago">S/ 0.00</strong>
+            </div>
+
+            <div class="resumen-item">
+                <span>Delivery</span>
+                <strong id="delivery-pago">S/ 0.00</strong>
+            </div>
+
+            <div class="total">
+                <span>Total a pagar</span>
+                <strong id="total-pago">S/ 0.00</strong>
+            </div>
+
+            <div class="beneficio">
+                <strong>✔ Pago verificado</strong>
+                <p>Confirmamos tu operación y te avisamos por correo.</p>
+            </div>
+
+            <div class="beneficio">
+                <strong>🚚 Entrega coordinada</strong>
+                <p>Coordinamos la entrega de tus materiales contigo.</p>
+            </div>
+
+            <div class="contacto">
+                <h4>¿Necesitas ayuda?</h4>
+                <p><strong>999 999 999</strong></p>
+                <p>ventas@construmax.pe</p>
+                <p>Huancayo, Junín</p>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DE ÉXITO
+    ====================================================== -->
+    <div class="modal-exito" id="modal-exito" hidden>
+        <div class="modal-caja">
+            <div class="check-anim">
+                <svg viewBox="0 0 52 52">
+                    <circle class="check-circulo" cx="26" cy="26" r="24" fill="none"/>
+                    <path class="check-marca" fill="none" d="M14 27l8 8 16-17"/>
+                </svg>
+            </div>
+            <h3>¡Pago registrado!</h3>
+            <p>Gracias <strong id="modal-nombre"></strong>. Verificaremos tu operación
+               <strong id="modal-ref"></strong> y te contactaremos pronto.</p>
+            <p class="modal-total">Total: <strong id="modal-total"></strong></p>
+            <a href="../index.html" class="btn-principal">Volver al inicio</a>
+        </div>
+        <div class="confeti" id="confeti"></div>
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer>
+        <div class="footer-contenido">
+            <div>
+                <h3>ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+            <div class="footer-derecha">
+                <p>ventas@construmax.pe</p>
+                <p>© 2026 ConstruMax Perú</p>
+            </div>
+        </div>
+        <div class="autor">Hecho con ❤ para ConstruMax</div>
+    </footer>
+
+</body>
+
+</html>

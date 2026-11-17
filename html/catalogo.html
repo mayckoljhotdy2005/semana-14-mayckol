@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruMax Perú - Catálogo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/catalogo.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="../java/catalogo.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO
+    ====================================================== -->
+    <header id="top">
+
+        <div class="encabezado">
+            <a href="../index.html" class="logo">
+                <div class="logo-icono">C</div>
+                <div>
+                    <h1>ConstruMax <em>Perú</em></h1>
+                    <p>Materiales y herramientas para tus proyectos</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Menú (en celular se abre con ☰, sin JavaScript) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-boton" aria-label="Abrir menú">☰</label>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                <li><a href="cotizacion.html">Cotización</a></li>
+                <li><a href="pago.html">Pago</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html" class="menu-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         CINTA DE OFERTAS QUE SE DESPLAZA
+    ====================================================== -->
+    <div class="cinta-ofertas" aria-hidden="true">
+        <div class="cinta-pista">
+            <span>🔥 Cemento Portland -11%</span>
+            <span>🧱 Ladrillo King Kong -17%</span>
+            <span>🏖️ Arena Gruesa -13%</span>
+            <span>🏗️ Fierro Corrugado -10%</span>
+            <span>🎨 Pintura Látex -11%</span>
+            <span>🔨 Taladro Eléctrico -12%</span>
+            <!-- se repite para que el movimiento no tenga cortes -->
+            <span>🔥 Cemento Portland -11%</span>
+            <span>🧱 Ladrillo King Kong -17%</span>
+            <span>🏖️ Arena Gruesa -13%</span>
+            <span>🏗️ Fierro Corrugado -10%</span>
+            <span>🎨 Pintura Látex -11%</span>
+            <span>🔨 Taladro Eléctrico -12%</span>
+        </div>
+    </div>
+
+
+    <!-- Filtros por categoría (solo CSS) -->
+    <input type="radio" name="filtro" id="f-todos" class="radio" checked>
+    <input type="radio" name="filtro" id="f-materiales" class="radio">
+    <input type="radio" name="filtro" id="f-fierros" class="radio">
+    <input type="radio" name="filtro" id="f-pinturas" class="radio">
+    <input type="radio" name="filtro" id="f-herramientas" class="radio">
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main>
+
+        <!-- ================= TÍTULO ================= -->
+        <section class="titulo">
+
+            <span class="forma forma-1"></span>
+            <span class="forma forma-2"></span>
+
+            <div class="titulo-texto">
+                <span class="etiqueta">CATÁLOGO</span>
+                <h2>Nuestros <em>productos</em></h2>
+                <p>
+                    Encuentra materiales de construcción y herramientas
+                    de excelente calidad para tus proyectos.
+                </p>
+
+                <div class="titulo-datos">
+                    <div><strong>6</strong><span>Productos</span></div>
+                    <div><strong>4</strong><span>Categorías</span></div>
+                    <div><strong>-17%</strong><span>Hasta en ofertas</span></div>
+                </div>
+            </div>
+
+            <div class="titulo-adorno" aria-hidden="true">
+                <span>🧱</span><span>🔨</span><span>🎨</span><span>🏗️</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTROS ================= -->
+        <nav class="filtros" aria-label="Filtrar productos por categoría">
+            <label for="f-todos">✨ Todos</label>
+            <label for="f-materiales">🧱 Materiales</label>
+            <label for="f-fierros">🏗️ Fierros</label>
+            <label for="f-pinturas">🎨 Pinturas</label>
+            <label for="f-herramientas">🔨 Herramientas</label>
+        </nav>
+
+
+        <!-- ================= CATÁLOGO ================= -->
+        <section class="catalogo">
+
+
+            <!-- ========== PRODUCTO 1 - CEMENTO ========== -->
+            <div class="tarjeta" data-cat="materiales"
+                data-producto="Cemento Portland Tipo I" data-codigo="CM-001" data-precio="32.00">
+
+                <span class="cinta">-11%</span>
+
+                <div class="foto">
+                    <img src="../img/cemento.jpg" alt="Cemento Portland Tipo I">
+                </div>
+
+                <span class="categoria">Materiales de construcción</span>
+
+                <h3>Cemento Portland Tipo I</h3>
+
+                <p>Cemento de alta calidad recomendado para columnas, vigas, pisos, muros y diferentes trabajos de construcción.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Bolsa de 42.5 kg</p>
+                <p><strong>Código:</strong> CM-001</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 36.00</del>
+                <h3 class="precio">S/ 32.00</h3>
+                <p class="oferta">Oferta especial: 11% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="cemento">Cantidad:</label>
+                    <input type="number" id="cemento" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+            <!-- ========== PRODUCTO 2 - LADRILLO ========== -->
+            <div class="tarjeta" data-cat="materiales"
+                data-producto="Ladrillo King Kong" data-codigo="CM-002" data-precio="1.50">
+
+                <span class="cinta">-17%</span>
+
+                <div class="foto">
+                    <img src="../img/ladrillo.jpg" alt="Ladrillo King Kong">
+                </div>
+
+                <span class="categoria">Materiales de construcción</span>
+
+                <h3>Ladrillo King Kong</h3>
+
+                <p>Ladrillo resistente y de excelente calidad, ideal para la construcción de muros y paredes.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Unidad</p>
+                <p><strong>Código:</strong> CM-002</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 1.80</del>
+                <h3 class="precio">S/ 1.50</h3>
+                <p class="oferta">Oferta especial: 17% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="ladrillo">Cantidad:</label>
+                    <input type="number" id="ladrillo" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+            <!-- ========== PRODUCTO 3 - ARENA ========== -->
+            <div class="tarjeta" data-cat="materiales"
+                data-producto="Arena Gruesa" data-codigo="CM-003" data-precio="13.00">
+
+                <span class="cinta">-13%</span>
+
+                <div class="foto">
+                    <img src="../img/arena.jpg" alt="Arena Gruesa">
+                </div>
+
+                <span class="categoria">Materiales de construcción</span>
+
+                <h3>Arena Gruesa</h3>
+
+                <p>Arena seleccionada de buena calidad para mezclas de concreto, cimientos, columnas y pisos.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Bolsa</p>
+                <p><strong>Código:</strong> CM-003</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 15.00</del>
+                <h3 class="precio">S/ 13.00</h3>
+                <p class="oferta">Oferta especial: 13% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="arena">Cantidad:</label>
+                    <input type="number" id="arena" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+            <!-- ========== PRODUCTO 4 - FIERRO ========== -->
+            <div class="tarjeta" data-cat="fierros"
+                data-producto='Fierro Corrugado 1/2"' data-codigo="CM-004" data-precio="43.00">
+
+                <span class="cinta">-10%</span>
+
+                <div class="foto">
+                    <img src="../img/fierros.jpg" alt='Fierro Corrugado 1/2"'>
+                </div>
+
+                <span class="categoria">Fierros y estructuras</span>
+
+                <h3>Fierro Corrugado 1/2"</h3>
+
+                <p>Barra de acero corrugado de alta resistencia, recomendada para columnas, vigas y estructuras.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Barra de 9 metros</p>
+                <p><strong>Código:</strong> CM-004</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 48.00</del>
+                <h3 class="precio">S/ 43.00</h3>
+                <p class="oferta">Oferta especial: 10% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="fierro">Cantidad:</label>
+                    <input type="number" id="fierro" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+            <!-- ========== PRODUCTO 5 - PINTURA ========== -->
+            <div class="tarjeta" data-cat="pinturas"
+                data-producto="Pintura Látex Interior" data-codigo="CM-005" data-precio="58.00">
+
+                <span class="cinta">-11%</span>
+
+                <div class="foto">
+                    <img src="../img/pintura.jpg" alt="Pintura Látex Interior">
+                </div>
+
+                <span class="categoria">Pinturas</span>
+
+                <h3>Pintura Látex Interior</h3>
+
+                <p>Pintura de excelente acabado y fácil aplicación, ideal para paredes interiores y remodelaciones.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Balde de 4 litros</p>
+                <p><strong>Código:</strong> CM-005</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 65.00</del>
+                <h3 class="precio">S/ 58.00</h3>
+                <p class="oferta">Oferta especial: 11% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="pintura">Cantidad:</label>
+                    <input type="number" id="pintura" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+            <!-- ========== PRODUCTO 6 - TALADRO ========== -->
+            <div class="tarjeta" data-cat="herramientas"
+                data-producto="Taladro Eléctrico" data-codigo="CM-006" data-precio="219.00">
+
+                <span class="cinta">-12%</span>
+
+                <div class="foto">
+                    <img src="../img/taladro.jpg" alt="Taladro Eléctrico">
+                </div>
+
+                <span class="categoria">Herramientas</span>
+
+                <h3>Taladro Eléctrico</h3>
+
+                <p>Taladro eléctrico de alta potencia para trabajos de construcción, instalación y reparación.</p>
+
+                <p><strong>Marca:</strong> ConstruMax</p>
+                <p><strong>Presentación:</strong> Unidad</p>
+                <p><strong>Código:</strong> CM-006</p>
+                <p><strong>Disponibilidad:</strong> <span class="disponible">Disponible</span></p>
+
+                <del>Precio anterior: S/ 250.00</del>
+                <h3 class="precio">S/ 219.00</h3>
+                <p class="oferta">Oferta especial: 12% de descuento</p>
+
+                <div class="cantidad">
+                    <label for="taladro">Cantidad:</label>
+                    <input type="number" id="taladro" min="1" value="1">
+                </div>
+
+                <a href="cotizacion.html" class="boton">Cotizar producto</a>
+                <button type="button">Agregar al pedido</button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= BENEFICIOS ================= -->
+        <section class="ventajas">
+            <div class="ventaja"><span>🚚</span><div><strong>Opciones de entrega</strong><p>Delivery o recojo en tienda</p></div></div>
+            <div class="ventaja"><span>💰</span><div><strong>Precios competitivos</strong><p>Ofertas en todos los productos</p></div></div>
+            <div class="ventaja"><span>📋</span><div><strong>Cotización personalizada</strong><p>Pide la cantidad que necesitas</p></div></div>
+            <div class="ventaja"><span>🙋</span><div><strong>Atención cercana</strong><p>Te orientamos en tu proyecto</p></div></div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-contenido">
+            <div>
+                <h3>🏗️ ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+
+            <div class="footer-derecha">
+                <p>© 2026 ConstruMax Perú</p>
+                <p>Proyecto académico</p>
+            </div>
+        </div>
+
+        <div class="autor">
+            Desarrollado por Mayckol Jhordy Huaman Lizarraga
+        </div>
+
+    </footer>
+
+
+    <!-- Botón para volver arriba -->
+    <a href="#top" class="subir" aria-label="Volver arriba">↑</a>
+
+
+    <!-- =====================================================
+         CARRITO DE COMPRAS
+    ====================================================== -->
+    <div id="carrito-flotante">
+        <button id="boton-carrito" type="button">
+            🛒
+            <span id="contador-carrito">0</span>
+        </button>
+    </div>
+
+
+    <!-- =====================================================
+         PANEL DEL CARRITO
+    ====================================================== -->
+    <div id="contenido-carrito" class="contenido-carrito">
+
+        <!-- CABECERA -->
+        <div class="cabecera-carrito">
+            <h2>🛒 Mi carrito</h2>
+            <button id="cerrar-carrito" type="button">✕</button>
+        </div>
+
+        <!-- PRODUCTOS -->
+        <div id="lista-carrito">
+            <div class="carrito-vacio">
+                <div class="icono-vacio">🛒</div>
+                <h3>Tu carrito está vacío</h3>
+                <p>Agrega productos desde el catálogo.</p>
+            </div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="total-carrito">
+            <span>Total:</span>
+            <strong id="total-carrito">S/ 0.00</strong>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="acciones-carrito">
+            <button type="button" class="vaciar" id="vaciar-carrito">Vaciar carrito</button>
+            <button type="button" class="cotizar" id="ir-cotizacion">Continuar con la cotización</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

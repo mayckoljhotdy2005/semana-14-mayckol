@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruMax Perú - Contacto</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/contacto.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO Y MENÚ
+    ====================================================== -->
+    <header>
+
+        <div class="encabezado">
+            <a href="../index.html" class="logo">
+                <div class="logo-icono"></div>
+                <div>
+                    <h1>ConstruMax Perú</h1>
+                    <p>Materiales y herramientas para tus proyectos</p>
+                </div>
+            </a>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cotizacion.html">Cotización</a></li>
+                <li><a href="consulta.html">Mis cotizaciones</a></li>
+                <li><a href="pago.html">Pago</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main>
+
+        <!-- ================= TÍTULO ================= -->
+        <section class="titulo">
+
+            <div class="forma forma-1"></div>
+            <div class="forma forma-2"></div>
+
+            <div class="titulo-texto">
+                <span class="etiqueta">CONTACTO</span>
+                <h2>Estamos para <em>ayudarte</em></h2>
+                <p>
+                    Ponte en contacto con ConstruMax Perú para realizar consultas,
+                    solicitar información o conocer más sobre nuestros productos
+                    y servicios.
+                </p>
+            </div>
+
+            <div class="titulo-adorno" aria-hidden="true">
+                <span>📞</span>
+                <span>✉️</span>
+                <span>📍</span>
+                <span>🧱</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMACIÓN Y FORMULARIO ================= -->
+        <section class="contacto-contenedor">
+
+            <!-- ---------- INFORMACIÓN ---------- -->
+            <div class="informacion">
+
+                <div class="aro aro-1"></div>
+                <div class="aro aro-2"></div>
+
+                <div class="info-superior">
+                    <span class="pequeno-titulo">CONSTRUMAX</span>
+                    <span class="estado-tienda" id="estado-tienda">
+                        <i class="punto-vivo"></i> <b id="estado-texto">Verificando horario…</b>
+                    </span>
+                </div>
+
+                <h2>Información de contacto</h2>
+
+                <p class="descripcion">
+                    Nuestro equipo está disponible para ayudarte con tus
+                    proyectos de construcción, remodelación y mejoramiento
+                    del hogar.
+                </p>
+
+                <div class="dato" style="--i:0">
+                    <div class="dato-icono">📍</div>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Arequipa, Perú</p>
+                    </div>
+                </div>
+
+                <a class="dato" href="tel:+51999999999" style="--i:1">
+                    <div class="dato-icono">📞</div>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+51 999 999 999</p>
+                    </div>
+                </a>
+
+                <a class="dato" href="mailto:contacto@construmaxperu.com" style="--i:2">
+                    <div class="dato-icono">✉️</div>
+                    <div>
+                        <h3>Correo electrónico</h3>
+                        <p>contacto@construmaxperu.com</p>
+                    </div>
+                </a>
+
+                <div class="dato" style="--i:3">
+                    <div class="dato-icono">🕗</div>
+                    <div>
+                        <h3>Horario de atención</h3>
+                        <p>Lunes a sábado</p>
+                        <p>8:00 a.m. - 6:00 p.m.</p>
+                    </div>
+                </div>
+
+                <div class="mensaje">
+                    <h3>¿Tienes un proyecto?</h3>
+                    <p>
+                        Cuéntanos qué necesitas y te ayudaremos a encontrar
+                        los materiales y herramientas adecuados para tu proyecto.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ---------- FORMULARIO ---------- -->
+            <div class="formulario">
+
+                <h2>Envíanos un mensaje</h2>
+                <p class="descripcion-formulario">Completa el formulario y te responderemos lo antes posible.</p>
+
+                <div class="progreso-form" aria-hidden="true">
+                    <div class="progreso-barra" id="progreso-barra"></div>
+                    <span id="progreso-texto">0% completado</span>
+                </div>
+
+                <form id="form-contacto" novalidate>
+
+                    <div class="fila">
+
+                        <div class="grupo" style="--i:0">
+                            <label for="nombre">Nombre completo</label>
+                            <div class="caja">
+                                <span class="icono">👤</span>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" autocomplete="name" required>
+                            </div>
+                            <small class="error-msg"></small>
+                        </div>
+
+                        <div class="grupo" style="--i:1">
+                            <label for="telefono">Teléfono</label>
+                            <div class="caja">
+                                <span class="icono">📞</span>
+                                <input type="tel" id="telefono" name="telefono" placeholder="999 999 999" maxlength="11" autocomplete="tel" inputmode="numeric" required>
+                            </div>
+                            <small class="error-msg"></small>
+                        </div>
+
+                    </div>
+
+                    <div class="grupo" style="--i:2">
+                        <label for="correo">Correo electrónico</label>
+                        <div class="caja">
+                            <span class="icono">✉️</span>
+                            <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" autocomplete="email" required>
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="grupo" style="--i:3">
+                        <label for="asunto">Asunto</label>
+                        <div class="caja">
+                            <span class="icono">🏷️</span>
+                            <select id="asunto" name="asunto">
+                                <option value="">Selecciona una opción</option>
+                                <option value="productos">Consulta sobre productos</option>
+                                <option value="cotizacion">Solicitar cotización</option>
+                                <option value="pedido">Consulta sobre pedido</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grupo" style="--i:4">
+                        <label for="mensaje">Mensaje</label>
+                        <div class="caja caja-texto">
+                            <span class="icono">💬</span>
+                            <textarea id="mensaje" name="mensaje" rows="6" maxlength="500" placeholder="Escribe tu mensaje..." required></textarea>
+                        </div>
+                        <div class="contador"><small class="error-msg"></small><span id="contador">0 / 500</span></div>
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                        <button type="reset" class="btn-limpiar">Limpiar</button>
+                    </div>
+
+                    <p class="seguro">🔒 Tus datos solo se usan para responder tu consulta.</p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ¿POR QUÉ CONTACTARNOS? ================= -->
+        <section class="atencion">
+
+            <span class="etiqueta etiqueta-clara">VENTAJAS</span>
+            <h2>¿Por qué contactarnos?</h2>
+
+            <div class="atencion-contenedor">
+
+                <div class="atencion-card" style="--i:0">
+                    <div class="atencion-icono">🧭</div>
+                    <h3>Asesoría</h3>
+                    <p>Te orientamos para elegir los productos adecuados para tu proyecto.</p>
+                </div>
+
+                <div class="atencion-card" style="--i:1">
+                    <div class="atencion-icono">💰</div>
+                    <h3>Buenos precios</h3>
+                    <p>Encuentra materiales y herramientas a precios competitivos.</p>
+                </div>
+
+                <div class="atencion-card" style="--i:2">
+                    <div class="atencion-icono">⚡</div>
+                    <h3>Atención rápida</h3>
+                    <p>Respondemos tus consultas para ayudarte a avanzar con tu proyecto.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         NOTIFICACIÓN
+    ====================================================== -->
+    <div class="toast" id="toast" hidden>
+        <div class="toast-icono">✅</div>
+        <div>
+            <strong id="toast-titulo">¡Listo!</strong>
+            <p id="toast-texto"></p>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-contenido">
+            <div>
+                <h3>ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+            <div class="footer-derecha">
+                <p>© 2026 ConstruMax Perú</p>
+                <p>Proyecto académico</p>
+            </div>
+        </div>
+
+        <div class="autor">Desarrollado por Mayckol Jhordy Huaman Lizarraga</div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script>
+        (() => {
+            const $ = (id) => document.getElementById(id);
+            const form = $("form-contacto");
+
+            /* ---------- Horario: abierto/cerrado (hora de Lima, lun-sáb 8-18) ---------- */
+            function horario() {
+                const f = new Intl.DateTimeFormat("en-US", {
+                    timeZone: "America/Lima", weekday: "short", hour: "numeric", minute: "numeric", hour12: false
+                }).formatToParts(new Date());
+                const dia = f.find(p => p.type === "weekday").value;
+                const h = parseInt(f.find(p => p.type === "hour").value, 10) % 24;
+                const abierto = dia !== "Sun" && h >= 8 && h < 18;
+                $("estado-tienda").classList.toggle("cerrado", !abierto);
+                $("estado-texto").textContent = abierto ? "Abierto ahora" : "Cerrado ahora";
+            }
+            horario();
+            setInterval(horario, 60000);
+
+            /* ---------- Validación ---------- */
+            const reglas = {
+                nombre:   (v) => v.trim().length >= 3 ? "" : "Escribe tu nombre completo.",
+                telefono: (v) => /^9\d{8}$/.test(v.replace(/\s/g, "")) ? "" : "Debe tener 9 dígitos y empezar con 9.",
+                correo:   (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Ingresa un correo válido.",
+                mensaje:  (v) => v.trim().length >= 10 ? "" : "Cuéntanos un poco más (mínimo 10 caracteres)."
+            };
+
+            function marcar(nombre) {
+                const campo = form.elements[nombre];
+                const grupo = campo.closest(".grupo");
+                const msg = reglas[nombre](campo.value);
+                grupo.classList.toggle("error", !!msg);
+                grupo.classList.toggle("ok", !msg);
+                grupo.querySelector(".error-msg").textContent = msg;
+                return !msg;
+            }
+
+            $("telefono").addEventListener("input", (e) => {
+                const d = e.target.value.replace(/\D/g, "").slice(0, 9);
+                e.target.value = d.replace(/(\d{3})(?=\d)/g, "$1 ").trim();
+            });
+
+            Object.keys(reglas).forEach((n) => {
+                const el = form.elements[n];
+                el.addEventListener("blur", () => marcar(n));
+                el.addEventListener("input", () => {
+                    if (el.closest(".grupo").classList.contains("error")) marcar(n);
+                    progreso();
+                });
+            });
+            $("asunto").addEventListener("change", progreso);
+
+            /* ---------- Contador y progreso ---------- */
+            $("mensaje").addEventListener("input", (e) => {
+                $("contador").textContent = e.target.value.length + " / 500";
+            });
+
+            function progreso() {
+                const n = Object.keys(reglas);
+                const ok = n.filter((k) => !reglas[k](form.elements[k].value)).length;
+                const pct = Math.round((ok / n.length) * 100);
+                $("progreso-barra").style.width = pct + "%";
+                $("progreso-texto").textContent = pct + "% completado";
+            }
+
+            /* ---------- Notificación ---------- */
+            let t;
+            function toast(titulo, texto, tipo) {
+                const el = $("toast");
+                el.className = "toast " + (tipo || "");
+                $("toast-titulo").textContent = titulo;
+                $("toast-texto").textContent = texto;
+                el.querySelector(".toast-icono").textContent = tipo === "error" ? "⚠️" : "✅";
+                el.hidden = true; void el.offsetWidth; el.hidden = false;
+                clearTimeout(t);
+                t = setTimeout(() => (el.hidden = true), 5000);
+            }
+
+            /* ---------- Envío (abre el correo con el mensaje listo) ---------- */
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const ok = Object.keys(reglas).map(marcar).every(Boolean);
+                if (!ok) {
+                    const primero = form.querySelector(".grupo.error");
+                    if (primero) primero.scrollIntoView({ behavior: "smooth", block: "center" });
+                    toast("Revisa el formulario", "Hay campos que debes completar o corregir.", "error");
+                    return;
+                }
+
+                const asunto = $("asunto").selectedOptions[0].textContent;
+                const asuntoMail = $("asunto").value ? asunto : "Consulta desde la web";
+                const cuerpo =
+                    `Nombre: ${form.nombre.value.trim()}\n` +
+                    `Teléfono: ${form.telefono.value.trim()}\n` +
+                    `Correo: ${form.correo.value.trim()}\n\n` +
+                    `${form.mensaje.value.trim()}`;
+
+                const btn = form.querySelector(".btn-enviar");
+                btn.classList.add("cargando");
+                btn.textContent = "Preparando...";
+
+                setTimeout(() => {
+                    window.location.href =
+                        "mailto:contacto@construmaxperu.com" +
+                        "?subject=" + encodeURIComponent(asuntoMail) +
+                        "&body=" + encodeURIComponent(cuerpo);
+                    btn.classList.remove("cargando");
+                    btn.textContent = "Enviar mensaje";
+                    toast("¡Mensaje preparado!", "Se abrió tu aplicación de correo. Solo pulsa enviar.");
+                }, 900);
+            });
+
+            form.addEventListener("reset", () => {
+                setTimeout(() => {
+                    form.querySelectorAll(".grupo").forEach((g) => {
+                        g.classList.remove("ok", "error");
+                        g.querySelector(".error-msg") && (g.querySelector(".error-msg").textContent = "");
+                    });
+                    $("contador").textContent = "0 / 500";
+                    progreso();
+                }, 0);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

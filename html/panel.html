@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de ConstruMax Perú para la gestión y seguimiento de cotizaciones de clientes.">
+    <title>Panel de administración - ConstruMax Perú</title>
+
+    <link rel="stylesheet" href="../css/panel.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO DEL PANEL
+    ====================================================== -->
+    <header class="encabezado-panel">
+
+        <div class="logo">
+            <div class="logo-icono">C</div>
+            <div>
+                <h1>Constru<em>Max</em> Perú</h1>
+                <p>Sistema de gestión de cotizaciones</p>
+            </div>
+        </div>
+
+        <div class="usuario-panel">
+
+            <div class="avatar" id="avatar-usuario" aria-hidden="true">👤</div>
+
+            <div class="informacion-usuario">
+                <span class="etiqueta-usuario"><i class="punto-vivo"></i> Sesión activa</span>
+                <span id="nombre-usuario">Usuario</span>
+                <span id="rol-usuario">Rol</span>
+            </div>
+
+            <button id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main class="contenedor-panel">
+
+        <!-- ================= BIENVENIDA ================= -->
+        <section class="bienvenida-panel">
+
+            <div class="forma forma-1"></div>
+            <div class="forma forma-2"></div>
+
+            <div class="bienvenida-texto">
+                <span class="etiqueta-seccion">ADMINISTRACIÓN Y CONTROL</span>
+                <h2>Panel de <em>administración</em></h2>
+                <p>
+                    Bienvenido al sistema de gestión de ConstruMax Perú.
+                    Desde este espacio puedes administrar, consultar,
+                    actualizar y dar seguimiento a las cotizaciones
+                    registradas por nuestros clientes.
+                </p>
+                <p class="texto-secundario">
+                    Utiliza las herramientas disponibles para mantener
+                    actualizada la información y brindar una atención
+                    rápida y organizada.
+                </p>
+            </div>
+
+            <div class="bienvenida-accion">
+                <div class="adorno" aria-hidden="true">
+                    <span>📋</span><span>🧱</span><span>📊</span><span>🚚</span>
+                </div>
+                <button id="btn-nueva-cotizacion" class="btn-principal" type="button">
+                    + Nueva cotización
+                </button>
+                <p>Registra una nueva solicitud de cotización directamente desde el panel.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= MENSAJES ================= -->
+        <div id="mensaje-panel" class="mensaje" role="status" aria-live="polite"></div>
+
+
+        <!-- ================= ESTADÍSTICAS ================= -->
+        <section class="seccion-estadisticas">
+
+            <div class="encabezado-seccion">
+                <div>
+                    <span class="etiqueta-seccion">RESUMEN GENERAL</span>
+                    <h2>Estado de las cotizaciones</h2>
+                    <p>Consulta rápidamente el estado actual de todas las solicitudes registradas.</p>
+                </div>
+            </div>
+
+            <div class="estadisticas">
+
+                <div class="tarjeta-estadistica t-total" style="--i:0">
+                    <div class="estadistica-icono">📦</div>
+                    <div class="estadistica-contenido">
+                        <span class="estadistica-etiqueta">TOTAL</span>
+                        <h3 id="total-cotizaciones">0</h3>
+                        <p>Cotizaciones registradas</p>
+                        <small>Total de solicitudes almacenadas en el sistema.</small>
+                    </div>
+                </div>
+
+                <div class="tarjeta-estadistica t-registradas" style="--i:1">
+                    <div class="estadistica-icono">🆕</div>
+                    <div class="estadistica-contenido">
+                        <span class="estadistica-etiqueta">REGISTRADAS</span>
+                        <h3 id="total-registradas">0</h3>
+                        <p>Solicitudes nuevas</p>
+                        <small>Cotizaciones pendientes de atención inicial.</small>
+                    </div>
+                </div>
+
+                <div class="tarjeta-estadistica t-proceso" style="--i:2">
+                    <div class="estadistica-icono">⚙️</div>
+                    <div class="estadistica-contenido">
+                        <span class="estadistica-etiqueta">EN PROCESO</span>
+                        <h3 id="total-proceso">0</h3>
+                        <p>Cotizaciones en atención</p>
+                        <small>Solicitudes que actualmente están siendo gestionadas.</small>
+                    </div>
+                </div>
+
+                <div class="tarjeta-estadistica t-finalizadas" style="--i:3">
+                    <div class="estadistica-icono">✅</div>
+                    <div class="estadistica-contenido">
+                        <span class="estadistica-etiqueta">FINALIZADAS</span>
+                        <h3 id="total-finalizadas">0</h3>
+                        <p>Solicitudes completadas</p>
+                        <small>Cotizaciones que finalizaron correctamente.</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTROS ================= -->
+        <section class="filtros-panel">
+
+            <div class="filtros-introduccion">
+                <span class="etiqueta-seccion">BÚSQUEDA Y FILTRADO</span>
+                <h2>Buscar cotizaciones</h2>
+                <p>Utiliza los siguientes campos para encontrar rápidamente una cotización específica.</p>
+            </div>
+
+            <div class="campos-filtros">
+
+                <div class="campo-filtro">
+                    <label for="buscar-cotizacion">Buscar cotización</label>
+                    <div class="caja">
+                        <span class="icono">🔍</span>
+                        <input type="text" id="buscar-cotizacion" placeholder="Código, cliente o correo...">
+                    </div>
+                    <small>Puedes buscar utilizando el código, nombre del cliente o correo electrónico.</small>
+                </div>
+
+                <div class="campo-filtro">
+                    <label for="filtro-estado">Filtrar por estado</label>
+                    <div class="caja">
+                        <span class="icono">🏷️</span>
+                        <select id="filtro-estado">
+                            <option value="">Todos los estados</option>
+                            <option value="registrado">Registrado</option>
+                            <option value="en proceso">En proceso</option>
+                            <option value="finalizado">Finalizado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                    <small>Selecciona un estado para mostrar únicamente las cotizaciones correspondientes.</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TABLA ================= -->
+        <section class="tabla-panel">
+
+            <div class="titulo-tabla">
+
+                <div>
+                    <span class="etiqueta-seccion">REGISTROS DEL SISTEMA</span>
+                    <h2>Cotizaciones registradas</h2>
+                    <p>
+                        Consulta y administra todas las cotizaciones
+                        almacenadas en la base de datos de ConstruMax Perú.
+                        Desde esta sección puedes crear, modificar
+                        y eliminar registros.
+                    </p>
+                </div>
+
+                <div class="accion-tabla">
+                    <button id="btn-recargar" class="btn-secundario" type="button">↻ Actualizar</button>
+                    <span>Mantén la información sincronizada con la base de datos.</span>
+                </div>
+
+            </div>
+
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Código</th>
+                            <th>Cliente</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Materiales</th>
+                            <th>Cantidad</th>
+                            <th>Entrega</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla-cotizaciones">
+                        <tr>
+                            <td colspan="11" class="cargando">Cargando cotizaciones...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="informacion-tabla">
+                <p>
+                    <strong>Información:</strong>
+                    Los registros mostrados corresponden a las
+                    cotizaciones almacenadas en la base de datos.
+                    Los administradores y empleados autorizados
+                    pueden gestionar su información según los
+                    permisos establecidos.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL CREAR / EDITAR
+    ====================================================== -->
+    <div id="modal-cotizacion" class="modal oculto">
+
+        <div class="modal-contenido">
+
+            <div class="modal-cabecera">
+                <div>
+                    <span class="etiqueta-seccion">GESTIÓN DE COTIZACIÓN</span>
+                    <h2 id="titulo-modal">Nueva cotización</h2>
+                    <p>Completa correctamente los datos solicitados para registrar o actualizar una cotización.</p>
+                </div>
+
+                <button id="btn-cerrar-modal" class="btn-cerrar" type="button" aria-label="Cerrar ventana">×</button>
+            </div>
+
+            <div class="ayuda-formulario">
+                <p>
+                    Los campos marcados como obligatorios deben
+                    completarse antes de guardar la información.
+                    Verifica los datos del cliente y del proyecto
+                    antes de confirmar el registro.
+                </p>
+            </div>
+
+            <form id="form-cotizacion">
+
+                <input type="hidden" id="cotizacion-id">
+
+                <div class="form-grid">
+
+                    <div class="campo" style="--i:0">
+                        <label for="codigo">Código de seguimiento</label>
+                        <input type="text" id="codigo" placeholder="Ej. COD-12345678" required>
+                        <small>Identificador utilizado para realizar el seguimiento de la cotización.</small>
+                    </div>
+
+                    <div class="campo" style="--i:1">
+                        <label for="nombre">Nombre del cliente</label>
+                        <input type="text" id="nombre" placeholder="Nombre completo" required>
+                    </div>
+
+                    <div class="campo" style="--i:2">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" id="telefono" placeholder="Número de teléfono" required>
+                    </div>
+
+                    <div class="campo" style="--i:3">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+                    </div>
+
+                    <div class="campo campo-completo" style="--i:4">
+                        <label for="direccion">Dirección del proyecto</label>
+                        <input type="text" id="direccion" placeholder="Dirección donde se realizará el proyecto">
+                    </div>
+
+                    <div class="campo" style="--i:5">
+                        <label for="cantidad-estimada">Cantidad estimada</label>
+                        <input type="text" id="cantidad-estimada" placeholder="Ej. 100 bolsas" required>
+                    </div>
+
+                    <div class="campo" style="--i:6">
+                        <label for="entrega">Tipo de entrega</label>
+                        <select id="entrega" required>
+                            <option value="">Seleccionar tipo de entrega</option>
+                            <option value="tienda">Recojo en tienda</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+
+                    <div class="campo" style="--i:7">
+                        <label for="estado">Estado de la cotización</label>
+                        <select id="estado" required>
+                            <option value="registrado">Registrado</option>
+                            <option value="en proceso">En proceso</option>
+                            <option value="finalizado">Finalizado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo" style="--i:8">
+                        <label for="materiales">Materiales solicitados</label>
+                        <textarea id="materiales" rows="3" placeholder="Indica los materiales solicitados por el cliente" required></textarea>
+                    </div>
+
+                    <div class="campo campo-completo" style="--i:9">
+                        <label for="observaciones">Observaciones adicionales</label>
+                        <textarea id="observaciones" rows="3" placeholder="Agrega información adicional relacionada con la solicitud"></textarea>
+                    </div>
+
+                </div>
+
+                <div id="mensaje-formulario" class="mensaje"></div>
+
+                <div class="acciones-formulario">
+                    <button type="button" id="btn-cancelar-modal" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" id="btn-guardar" class="btn-principal">Guardar cotización</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script type="module" src="../java/panel.js"></script>
+
+    <!-- Efectos visuales (no afecta tu lógica): contadores animados y cierre con ESC -->
+    <script>
+        (() => {
+            const ids = ["total-cotizaciones", "total-registradas", "total-proceso", "total-finalizadas"];
+
+            const contar = (el, hasta) => {
+                const desde = parseInt(el.dataset.valor || "0", 10);
+                if (desde === hasta) return;
+                el.dataset.valor = hasta;
+                const inicio = performance.now(), dur = 900;
+                const paso = (t) => {
+                    const p = Math.min((t - inicio) / dur, 1);
+                    const ease = 1 - Math.pow(1 - p, 3);
+                    obs.disconnect();
+                    el.textContent = Math.round(desde + (hasta - desde) * ease);
+                    ids.forEach(i => obs.observe(document.getElementById(i), { childList: true, characterData: true, subtree: true }));
+                    if (p < 1) requestAnimationFrame(paso);
+                };
+                el.classList.remove("cambio"); void el.offsetWidth; el.classList.add("cambio");
+                requestAnimationFrame(paso);
+            };
+
+            const obs = new MutationObserver((muts) => {
+                muts.forEach((m) => {
+                    const el = m.target.nodeType === 3 ? m.target.parentElement : m.target;
+                    if (!el || !ids.includes(el.id)) return;
+                    const n = parseInt(el.textContent, 10);
+                    if (!isNaN(n)) contar(el, n);
+                });
+            });
+            ids.forEach(i => obs.observe(document.getElementById(i), { childList: true, characterData: true, subtree: true }));
+
+            // Cerrar modal con ESC
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    const b = document.getElementById("btn-cerrar-modal");
+                    if (!document.getElementById("modal-cotizacion").classList.contains("oculto")) b.click();
+                }
+            });
+
+            // Inicial del usuario en el avatar
+            const nombre = document.getElementById("nombre-usuario");
+            const avatar = document.getElementById("avatar-usuario");
+            new MutationObserver(() => {
+                const t = nombre.textContent.trim();
+                if (t && t !== "Usuario") avatar.textContent = t[0].toUpperCase();
+            }).observe(nombre, { childList: true, characterData: true, subtree: true });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruMax Perú - Cotización</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/cotizacion.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="../java/cotizacion.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO
+    ====================================================== -->
+    <header>
+
+        <div class="encabezado">
+            <a href="../index.html" class="logo">
+                <div class="logo-icono">C</div>
+                <div>
+                    <h1>ConstruMax <em>Perú</em></h1>
+                    <p>Materiales y herramientas para tus proyectos</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Menú (en celular se abre con ☰, sin JavaScript) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-boton" aria-label="Abrir menú">☰</label>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cotizacion.html" class="activo">Cotización</a></li>
+                <li><a href="consulta.html">Mis cotizaciones</a></li>
+                <li><a href="pago.html">Pago</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html" class="menu-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main>
+
+        <!-- ================= TÍTULO ================= -->
+        <section class="titulo">
+
+            <span class="forma forma-1"></span>
+            <span class="forma forma-2"></span>
+
+            <div class="titulo-texto">
+                <span class="etiqueta">COTIZACIÓN</span>
+                <h2>Solicita tu <em>cotización</em></h2>
+                <p>
+                    Completa el formulario y revisa los productos
+                    seleccionados desde nuestro catálogo.
+                </p>
+            </div>
+
+            <div class="titulo-adorno" aria-hidden="true">
+                <span>📋</span><span>🧮</span><span>🏗️</span><span>✅</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PASOS ================= -->
+        <nav class="pasos-proceso" aria-label="Progreso de tu solicitud">
+            <a href="catalogo.html" class="pp hecho"><span>✓</span><b>Catálogo</b></a>
+            <i class="pp-linea llena"></i>
+            <div class="pp actual"><span>2</span><b>Cotización</b></div>
+            <i class="pp-linea"></i>
+            <a href="pago.html" class="pp"><span>3</span><b>Pago</b></a>
+        </nav>
+
+
+        <!-- ================= CONTENIDO DE COTIZACIÓN ================= -->
+        <section class="contenedor-cotizacion">
+
+
+            <!-- ========== FORMULARIO ========== -->
+            <div class="formulario">
+
+                <h3>Datos de la cotización</h3>
+
+                <p class="descripcion-formulario">
+                    Ingresa tus datos para solicitar información
+                    sobre los productos seleccionados.
+                </p>
+
+
+                <div class="fila">
+
+                    <!-- NOMBRE -->
+                    <div class="campo" style="--i:0">
+                        <label for="nombre">Nombre completo</label>
+                        <div class="caja">
+                            <span class="icono">👤</span>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+                    </div>
+
+                    <!-- TELÉFONO -->
+                    <div class="campo" style="--i:1">
+                        <label for="telefono">Teléfono</label>
+                        <div class="caja">
+                            <span class="icono">📞</span>
+                            <input type="tel" id="telefono" name="telefono" placeholder="999 999 999" required>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <!-- CORREO -->
+                    <div class="campo" style="--i:2">
+                        <label for="correo">Correo electrónico</label>
+                        <div class="caja">
+                            <span class="icono">✉️</span>
+                            <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
+                        </div>
+                    </div>
+
+                    <!-- DIRECCIÓN -->
+                    <div class="campo" style="--i:3">
+                        <label for="direccion">Dirección</label>
+                        <div class="caja">
+                            <span class="icono">📍</span>
+                            <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- CANTIDAD ESTIMADA -->
+                <div class="campo" style="--i:4">
+                    <label for="cantidad-estimada">Cantidad estimada</label>
+                    <div class="caja">
+                        <span class="icono">🔢</span>
+                        <input type="text" id="cantidad-estimada" name="cantidad-estimada" maxlength="50" required placeholder="Ejemplo: 20 unidades">
+                    </div>
+                </div>
+
+
+                <!-- PRODUCTOS SELECCIONADOS -->
+                <div id="resumen-productos-cotizacion">
+
+                    <div class="titulo-resumen">
+                        <span>🛒</span>
+                        <div>
+                            <h3>Productos solicitados</h3>
+                            <p>Productos seleccionados desde el catálogo</p>
+                        </div>
+                    </div>
+
+                    <!-- AQUÍ APARECERÁN LOS PRODUCTOS -->
+                    <div id="lista-productos-cotizacion"></div>
+
+                    <!-- TOTAL -->
+                    <div class="subtotal-cotizacion">
+                        <span>Total:</span>
+                        <strong id="total-cotizacion">S/ 0.00</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- TIPO DE ENTREGA -->
+                <div class="campo" style="--i:5">
+                    <label for="entrega">Tipo de entrega</label>
+                    <div class="caja">
+                        <span class="icono">🚚</span>
+                        <select id="entrega" name="entrega" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="tienda">Recojo en tienda</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- OBSERVACIONES -->
+                <div class="campo" style="--i:6">
+                    <label for="observaciones">Observaciones</label>
+                    <div class="caja caja-texto">
+                        <span class="icono">💬</span>
+                        <textarea id="observaciones" name="observaciones" rows="5" placeholder="Escribe alguna consulta o detalle adicional..."></textarea>
+                    </div>
+                </div>
+
+
+                <!-- BOTONES -->
+                <div class="botones">
+                    <button type="button" class="btn-principal">Continuar al pago</button>
+                    <button type="reset" class="limpiar">Limpiar formulario</button>
+                </div>
+
+            </div>
+
+
+            <!-- ========== PANEL LATERAL ========== -->
+            <aside class="resumen">
+
+                <span class="aro aro-1"></span>
+                <span class="aro aro-2"></span>
+
+                <div class="resumen-superior">
+                    <span class="pequeno-titulo">CONSTRU MAX</span>
+                    <div class="resumen-icono">🏗️</div>
+                </div>
+
+                <h3>¿Por qué comprar con nosotros?</h3>
+
+                <div class="beneficio">
+                    <strong>✓ Productos de calidad</strong>
+                    <p>Materiales y herramientas seleccionados para tus proyectos.</p>
+                </div>
+
+                <div class="beneficio">
+                    <strong>✓ Precios competitivos</strong>
+                    <p>Ofrecemos buenos precios para construcción y mejoramiento del hogar.</p>
+                </div>
+
+                <div class="beneficio">
+                    <strong>✓ Atención personalizada</strong>
+                    <p>Te ayudamos a elegir los productos que necesitas.</p>
+                </div>
+
+                <div class="beneficio">
+                    <strong>✓ Opciones de entrega</strong>
+                    <p>Puedes recoger tu pedido o solicitar delivery.</p>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="contacto">
+                    <h4>Contáctanos</h4>
+                    <p><strong>Teléfono:</strong> 999 999 999</p>
+                    <p><strong>Correo:</strong> contacto@construmax.pe</p>
+                    <p><strong>Ubicación:</strong> Arequipa, Perú</p>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-contenido">
+            <div>
+                <h3>🏗️ ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+
+            <div class="footer-derecha">
+                <p>© 2026 ConstruMax Perú</p>
+                <p>Proyecto académico</p>
+            </div>
+        </div>
+
+        <div class="autor">
+            Desarrollado por Mayckol Jhordy Huaman Lizarraga
+        </div>
+
+    </footer>
+
+</body>
+</html>

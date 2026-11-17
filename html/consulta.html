@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruMax Perú - Mis Cotizaciones</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/consulta.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="../java/consulta.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO Y MENÚ
+    ====================================================== -->
+    <header>
+
+        <div class="encabezado">
+            <a href="../index.html" class="logo">
+                <div class="logo-icono"></div>
+                <div>
+                    <h1>ConstruMax Perú</h1>
+                    <p>Materiales y herramientas para tus proyectos</p>
+                </div>
+            </a>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cotizacion.html">Cotización</a></li>
+                <li><a href="consulta.html" class="activo">Mis cotizaciones</a></li>
+                <li><a href="pago.html">Pago</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
+    <main>
+
+        <!-- ================= TÍTULO ================= -->
+        <section class="titulo">
+
+            <div class="forma forma-1"></div>
+            <div class="forma forma-2"></div>
+
+            <span class="etiqueta">MIS COTIZACIONES</span>
+            <h2>Consulta tus <em>cotizaciones</em></h2>
+            <p>Aquí puedes consultar las cotizaciones que has registrado.</p>
+
+        </section>
+
+
+        <div class="pagina">
+
+            <!-- ================= INFORMACIÓN DEL USUARIO ================= -->
+            <section class="usuario">
+
+                <div class="aro aro-1"></div>
+                <div class="aro aro-2"></div>
+
+                <div class="usuario-texto">
+                    <h3>Bienvenido</h3>
+                    <p id="nombre-usuario">Cargando información...</p>
+                </div>
+
+                <div class="usuario-icono" aria-hidden="true">👋</div>
+
+            </section>
+
+
+            <!-- ================= LISTA DE COTIZACIONES ================= -->
+            <section class="contenedor-consulta">
+
+                <div class="encabezado-consulta">
+
+                    <div>
+                        <h3>Mis cotizaciones</h3>
+                        <p>Estas son las cotizaciones asociadas a tu cuenta.</p>
+                    </div>
+
+                    <button type="button" id="btn-actualizar">Actualizar</button>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+                <p id="mensaje-consulta" class="mensaje" role="status" aria-live="polite">
+                    Cargando cotizaciones...
+                </p>
+
+
+                <!-- COTIZACIONES (las genera consulta.js) -->
+                <div id="lista-cotizaciones"></div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-contenido">
+            <div>
+                <h3>ConstruMax Perú</h3>
+                <p>Materiales y herramientas para tus proyectos.</p>
+            </div>
+            <div class="footer-derecha">
+                <p>© 2026 ConstruMax Perú</p>
+                <p>Proyecto académico</p>
+            </div>
+        </div>
+
+        <div class="autor">Desarrollado por Mayckol Jhordy Huaman Lizarraga</div>
+
+    </footer>
+
+</body>
+
+</html>
